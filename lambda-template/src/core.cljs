@@ -1,13 +1,8 @@
 (ns core
-  (:require [cljs.nodejs :as nodejs]))
+  (:require [promesa.core :as p]))
 
-(nodejs/enable-util-print!)
-
-(defn handler [event ctx cb]
-  (if (nil? cb)
-    (println "Error")
-    (cb nil (clj->js
-             {:statusCode 200
-              :body (.stringify js/JSON "Hello from Lambda!")}))))
+(defn handler [event _]
+  (println (:body (js->clj event :keywordize-keys true)))
+  (p/promise (clj->js {:statusCode 200 :body (.stringify js/JSON "Hello from Lambda!")})))
 
 (set! (.-exports js/module) #js {:handler handler})

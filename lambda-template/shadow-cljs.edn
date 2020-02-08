@@ -1,15 +1,12 @@
 ;; shadow-cljs configuration
-{:source-paths
- ["src"
-  "tests"]
+{:dependencies [[funcool/promesa "5.1.0"]]
 
- :dependencies
- []
+ :source-paths ["src" "tests"]
 
- :builds {  :lambda { :target :node-script
-                    :output-to "dist/main.js"
-                    :main core/handler}
-            :test { :target :node-test
-                    :ns-regexp "_test$"
-                    :output-to "dist/node-tests.js"
-                    :autorun   true}}}
+ :builds {:lambda {:target :node-script
+                   :output-to "dist/main.js"
+                   :main core/handler}
+          :test {:target :node-test
+                 :ns-regexp "_test$"
+                 :output-to "dist/node-tests.js"
+                 :autorun   true}}}

@@ -1,10 +1,9 @@
 (ns main_test
   (:require [core :refer [handler]]
-            [cljs.test :refer (deftest is)]))
-
-(defn aws_callback [error result]
-  (is (nil? error))
-  (is (not (nil? result))))
+            [promesa.core :as p]
+            [cljs.test :refer (deftest is async)]))
 
 (deftest handler_test
-  (handler nil nil aws_callback))
+  (async done (-> (handler nil nil)
+                  (p/then (fn [result] (is (not (nil? result))) (done)))
+                  (p/catch (fn [error] (is (nil? error)) (done))))))
