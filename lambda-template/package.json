@@ -1,0 +1,15 @@
+{
+  "name": "lambda-template",
+  "version": "1.0.0",
+  "devDependencies": {
+    "shadow-cljs": "2.8.83"
+  },
+  "dependencies": {
+  },
+  "scripts": {
+    "build": "shadow-cljs compile lambda",
+    "release": "shadow-cljs release lambda"
+  },
+  "private": true,
+  "license": "MIT"
+}

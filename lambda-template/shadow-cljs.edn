@@ -1,0 +1,11 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src"
+  "tests"]
+
+ :dependencies
+ []
+
+ :builds {:lambda {:target :node-script
+                   :output-to "dist/main.js"
+                   :main core/handler}}}
