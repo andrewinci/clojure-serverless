@@ -8,7 +8,9 @@
   },
   "scripts": {
     "build": "shadow-cljs compile lambda",
-    "release": "shadow-cljs release lambda"
+    "release": "yarn clean && shadow-cljs release lambda",
+    "test": "shadow-cljs compile test && node dist/node-tests.js",
+    "clean": "rm -rf dist"
   },
   "private": true,
   "license": "MIT"

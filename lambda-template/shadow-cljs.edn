@@ -6,6 +6,10 @@
  :dependencies
  []
 
- :builds {:lambda {:target :node-script
-                   :output-to "dist/main.js"
-                   :main core/handler}}}
+ :builds {  :lambda { :target :node-script
+                    :output-to "dist/main.js"
+                    :main core/handler}
+            :test { :target :node-test
+                    :ns-regexp "_test$"
+                    :output-to "dist/node-tests.js"
+                    :autorun   true}}}
