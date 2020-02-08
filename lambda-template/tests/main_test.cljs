@@ -1,6 +1,10 @@
 (ns main_test
-    (:require [core :refer [handler]]
-              [cljs.test :refer (deftest is)]))
+  (:require [core :refer [handler]]
+            [cljs.test :refer (deftest is)]))
+
+(defn aws_callback [error result]
+  (is (nil? error))
+  (is (not (nil? result))))
 
 (deftest handler_test
-    (is (not (nil? (handler nil)))))
+  (handler nil nil aws_callback))
