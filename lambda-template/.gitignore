@@ -11,3 +11,4 @@ figwheel_server.log
 pom.xml
 dist
 .shadow-cljs
+.rebel_readline_history

@@ -10,6 +10,7 @@
     "build": "shadow-cljs compile lambda",
     "release": "yarn clean && shadow-cljs release lambda",
     "test": "shadow-cljs compile test && node dist/node-tests.js",
+    "repl": "clojure -Sdeps \"{:deps {com.bhauman/rebel-readline {:mvn/version \\\"0.1.4\\\"}}}\" -m rebel-readline.main",
     "clean": "rm -rf dist"
   },
   "private": true,
