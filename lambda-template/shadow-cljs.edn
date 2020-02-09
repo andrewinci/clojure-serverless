@@ -3,9 +3,12 @@
 
  :source-paths ["src" "tests"]
 
- :builds {:lambda {:target :node-script
+ :builds {:lambda {:target :node-library
                    :output-to "dist/main.js"
-                   :main core/handler}
+                   :js-options {:js-provider :shadow
+                                :keep-native-requires true}
+                   :exports-var core/export}
+
           :test {:target :node-test
                  :ns-regexp "_test$"
                  :output-to "dist/node-tests.js"
