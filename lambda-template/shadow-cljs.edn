@@ -6,6 +6,7 @@
  :builds {:lambda {:target :node-library
                    :output-to "dist/main.js"
                    :js-options {:js-provider :shadow
+                                :keep-as-require #{"aws-sdk"}
                                 :keep-native-requires true}
                    :exports-var core/export}
 
