@@ -5,7 +5,7 @@
     "shadow-cljs": "2.8.83"
   },
   "dependencies": {
-    "aws-sdk": "^2.614.0",
+    "aws-sdk": "^2.814.0",
     "request": "^2.88.0"
   },
   "scripts": {
